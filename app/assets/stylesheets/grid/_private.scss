@@ -8,12 +8,12 @@ $layout-direction: LTR !default;
 @function flex-grid($columns, $container-columns: $fg-max-columns) {
   $width: flex-width($columns);
   $container-width: flex-width($container-columns);
-  @return percentage(calc($width / $container-width));
+  @return math.percentage(math.div($width, $container-width));
 }
 
 @function flex-gutter($container-columns: $fg-max-columns, $gutter: $fg-gutter) {
   $container-width: flex-width($container-columns);
-  @return percentage(calc($gutter / $container-width));
+  @return math.percentage(math.div($gutter, $container-width));
 }
 
 @function flex-width($n, $column-width: $fg-column, $gutter-width: $fg-gutter) {
